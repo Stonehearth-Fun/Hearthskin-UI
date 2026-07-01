@@ -20,9 +20,11 @@
    bottom: 0;
    left: 0;
    overflow: hidden;
-   background:
-      linear-gradient(rgba(33, 24, 14, 0.28), rgba(33, 24, 14, 0.28)),
-      url('/hearthskin-ui/ui/shell/loading_screen/images/bg.png') center center / cover no-repeat;
+   background-color: #1c140d;
+   background-image: url('/hearthskin-ui/ui/shell/loading_screen/images/bg.png');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
    color: #f7f0dc;
    font-family: 'AutourOne', serif;
 }
@@ -95,8 +97,10 @@
    min-width: 480px;
    min-height: 520px;
    transform: translateY(-46%);
-   background: url('/hearthskin-ui/ui/shell/loading_screen/images/bg2.png') left center / contain no-repeat;
-   filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.28));
+   background-image: url('/hearthskin-ui/ui/shell/loading_screen/images/bg2.png');
+   background-position: left center;
+   background-repeat: no-repeat;
+   background-size: contain;
 }
 
 #prop {
@@ -107,8 +111,10 @@
    height: 28vh;
    min-width: 140px;
    min-height: 180px;
-   background: url('/hearthskin-ui/ui/shell/loading_screen/images/bg3.png') center center / contain no-repeat;
-   filter: drop-shadow(0 18px 18px rgba(0, 0, 0, 0.25));
+   background-image: url('/hearthskin-ui/ui/shell/loading_screen/images/bg3.png');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: contain;
 }
 
 #infoPanel {
@@ -124,14 +130,18 @@
 #titleFrame {
    min-height: 112px;
    padding: 26px 22px 34px;
-   background: url('/hearthskin-ui/ui/shell/loading_screen/images/crafter_shingle.png') center center / 100% 100% no-repeat;
+   background-image: url('/hearthskin-ui/ui/shell/loading_screen/images/crafter_shingle.png');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
 }
 
 #title {
    margin: 0;
    text-align: center;
    color: #ffb93a;
-   font: 46px 'OfelixGro', sans-serif;
+   font-family: 'OfelixGro', sans-serif;
+   font-size: 46px;
    letter-spacing: 1px;
    text-shadow: 0 3px 0 rgba(73, 35, 10, 0.35);
 }
@@ -140,7 +150,10 @@
    margin-top: 18px;
    min-height: 350px;
    padding: 74px 58px 66px;
-   background: url('/hearthskin-ui/ui/shell/loading_screen/images/scroll_bg.png') center center / 100% 100% no-repeat;
+   background-image: url('/hearthskin-ui/ui/shell/loading_screen/images/scroll_bg.png');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
    box-sizing: border-box;
 }
 
@@ -167,7 +180,10 @@
    right: 0;
    bottom: 0;
    left: 0;
-   background: url('/hearthskin-ui/ui/shell/loading_screen/images/progress_frame.png') center center / contain no-repeat;
+   background-image: url('/hearthskin-ui/ui/shell/loading_screen/images/progress_frame.png');
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: contain;
 }
 
 #progressbar {
@@ -184,7 +200,8 @@
    left: 34px;
    right: 34px;
    color: #fff8eb;
-   font: 24px 'AutourOne', serif;
+   font-family: 'AutourOne', serif;
+   font-size: 24px;
    text-align: center;
    text-shadow:
       -2px -2px 0 #1b1b1b,
@@ -242,7 +259,8 @@
 
    #infoPanel {
       right: 5%;
-      width: min(39vw, 620px);
+      width: 39vw;
+      max-width: 620px;
    }
 }
 
