@@ -246,6 +246,46 @@
       var self = this;
       var loadedProgress = 0;
       var displayedLoadedProgress = 0;
+      var titleKey = null;
+
+      var loadingTitleKeys = [
+         'stonehearth:jobs.worker.worker_description.display_name',
+         'stonehearth:jobs.farmer.farmer_description.display_name',
+         'stonehearth:jobs.trapper.trapper_description.display_name',
+         'stonehearth:jobs.shepherd.shepherd_description.display_name',
+         'stonehearth:jobs.footman.footman_description.display_name',
+         'stonehearth:jobs.archer.archer_description.display_name',
+         'stonehearth:jobs.blacksmith.blacksmith_description.display_name',
+         'stonehearth:jobs.carpenter.carpenter_description.display_name',
+         'stonehearth:jobs.mason.mason_description.display_name',
+         'stonehearth:jobs.weaver.weaver_description.display_name',
+         'stonehearth:jobs.cook.cook_description.display_name',
+         'stonehearth:jobs.herbalist.herbalist_description.display_name',
+         'stonehearth:jobs.engineer.engineer_description.display_name',
+         'stonehearth:jobs.knight.knight_description.display_name',
+         'stonehearth:jobs.cleric.cleric_description.display_name',
+         'stonehearth:jobs.potter.potter_description.display_name',
+         'stonehearth:jobs.geomancer.geomancer_description.display_name',
+         'stonehearth:entities.critters.sheep.display_name',
+         'stonehearth:entities.critters.poyo.display_name',
+         'stonehearth:entities.critters.rabbit.display_name',
+         'stonehearth:entities.critters.boar.display_name',
+         'stonehearth:entities.monsters.forest.stone_golem.display_name'
+      ];
+
+      var setRandomLoadingTitle = function() {
+         if (!titleKey) {
+            var randomIndex = Math.floor(Math.random() * loadingTitleKeys.length);
+            titleKey = loadingTitleKeys[randomIndex];
+         }
+
+         var localizedTitle = i18n.t(titleKey);
+         if (!localizedTitle || localizedTitle === titleKey) {
+            localizedTitle = 'MAGMASMITH';
+         }
+
+         self.$('#title').html(localizedTitle);
+      };
 
       self._progressbar = $("#progressbar");
       self._progressbar.progressbar({
@@ -288,6 +328,8 @@
       var TICKS_WARM_UP_MULTIPLIER = 0.7;
 
       self._intervalTicket = setInterval(function() {
+         setRandomLoadingTitle();
+
          if (!loadingText) {
             loadingText = i18n.t('stonehearth:ui.shell.loading_screen.initial_load_game_text');
             self.$('#message').html(loadingText);
